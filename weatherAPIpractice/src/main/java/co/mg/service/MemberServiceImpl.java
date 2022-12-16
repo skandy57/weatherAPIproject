@@ -42,4 +42,5 @@ public class MemberServiceImpl implements MemberService {
 		log.info("MemberServiceImpl update------------");
 		return mapper.update(member);
 	}
+	
 }
