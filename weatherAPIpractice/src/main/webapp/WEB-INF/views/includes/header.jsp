@@ -42,11 +42,20 @@ toggleBtn.addEventListener('click', () => {
 	<!-- nav 상단 고정-->
 	 <nav class="navbar">
                 <div class="navbar__logo">
-                        <i class="fab fa-amazon" href="/"></i>
+                       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 10C22 5.58172 18.4183 2 14 2C9.58172 2 6 5.58172 6 10C6 14.4183 9.58172 18 14 18C18.4183 18 22 14.4183 22 10Z" fill="white"/>
+  <path d="M53 10C53 5.58172 49.4183 2 45 2C40.5817 2 37 5.58172 37 10C37 14.4183 40.5817 18 45 18C49.4183 18 53 14.4183 53 10Z" fill="white"/>
+  <rect x="14" y="34" width="36" height="8" rx="2" fill="white"/>
+  <rect x="22" y="52" width="20" height="4" rx="2" fill="white"/>
+  <rect x="24" y="58" width="16" height="4" rx="2" fill="white"/>
+  <rect x="14" y="42" width="14" height="8" rx="2" fill="white"/>
+  <rect x="40" y="42" width="14" height="8" rx="2" fill="white"/>
+  <rect x="14" y="26" width="36" height="8" rx="2" fill="white"/>
+</svg>
                         <a href="/">따릉쓰</a>
                 </div>
                 <ul class="navbar__menu">
-                        <li><a href="#">Menu</a></li>
+                        <li><a href="/">자전거</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Menu</a></li>

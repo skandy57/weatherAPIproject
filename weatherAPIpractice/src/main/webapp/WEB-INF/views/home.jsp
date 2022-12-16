@@ -37,16 +37,41 @@ toggleBtn.addEventListener('click', () => {
         menu.classList.toggle('active');
         sns.classList.toggle('active');
 });
+const btn = document.getElementById('scroll-top-btn');
+
+//handle the click event for the button
+btn.addEventListener('click', event => {
+ // scroll to the top of the page
+ window.scrollTo({
+     top: 0,
+     behavior: 'smooth'
+ });
+});
+
+//handle the scroll event for the window
+window.addEventListener('scroll', event => {
+ // show or hide the button based on the scroll position
+ if (window.pageYOffset > 300) {
+     btn.style.display = 'block';
+ } else {
+     btn.style.display = 'none';
+ }
+});
 </script>
 </head>
 <body>
 	<%@include file="/WEB-INF/views/includes/header.jsp"%>
 
 	<div class="container">
-		<h1>지금 날씨는</h1>
+		<h1>지금 날씨는?</h1>
 		<span class="weatherInfo"></span> <img class="weatherIcon">
 	</div>
+	<button id="scroll-top-btn" title="Scroll to top">
+    <i class="fas fa-arrow-up">ㅁㄴㅇㅀㄶㄴㅇㄹㄴㅇㄹㄴㅇㅀㅇㅀㅇㅀㅇㅀㅇㅀㅇㅀㄴㅇㅀㄴㅇㅀ</i>
+</button>
+	
 	<%@include file="/WEB-INF/views/includes/footer.jsp"%>
 </body>
+
 <script src="${path}/resources/js/app.js"></script>
 </html>

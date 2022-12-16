@@ -31,11 +31,13 @@
 <body>
 <footer id="fixed-footer">
     <div>
-        <p>Made with ❤️ by <a href="https://github.com/your-username">your-username</a></p>
-        <p>Your Name</p>
-        <p>Email: your-email@example.com</p>
-        <p>Phone: +1 (123) 456-7890</p>
+        <p>깃헙 주소 <a href="https://github.com/skandy57/weatherAPIproject">https://github.com/skandy57/weatherAPIproject</a></p>
+        <p>최민곤</p>
+        <p>Email: skandy57@naver.com</p>
+        <p>Phone: 010-6390-8764</p>
+        
     </div>
+
 </footer>
 </body>
 
