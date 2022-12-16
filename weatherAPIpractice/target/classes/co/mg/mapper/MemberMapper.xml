@@ -5,7 +5,8 @@
 
 	<select id="login" resultType="co.mg.VO.MemberVO">
 		select *from member
-		where id=#{id} and pw=#{pw}
+		where id=#{id} and 
+		pw=#{pw}
 	</select>
 	<insert id="signup">
 		insert into pj_like (id, pw, signupDate,isActive,member_grade,member_num)

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page session="false"%>
 <!DOCTYPE html>
 <html>
@@ -55,11 +56,16 @@ toggleBtn.addEventListener('click', () => {
                         <a href="/">따릉쓰</a>
                 </div>
                 <ul class="navbar__menu">
-                        <li><a href="/">자전거</a></li>
+                        <li><a href="/bicycle">자전거</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Menu</a></li>
-                        <li><a href="#">Menu</a></li>
+                        <c:if test="${mem==null }">
+                        <li><a href="/login/login">로그인</a></li>
+                        </c:if>
+                        <c:if test="${mem!=null }">
+                        <li><form method="post"><input type="hidden" id="session_member_num" value="${mem.member_num }"></form></li>
+                        </c:if>
                 </ul>
                 <ul class="navbar__sns">
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>

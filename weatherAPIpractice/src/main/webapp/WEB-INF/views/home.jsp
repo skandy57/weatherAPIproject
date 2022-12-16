@@ -67,7 +67,7 @@ window.addEventListener('scroll', event => {
 		<span class="weatherInfo"></span> <img class="weatherIcon">
 	</div>
 	<button id="scroll-top-btn" title="Scroll to top">
-    <i class="fas fa-arrow-up">ㅁㄴㅇㅀㄶㄴㅇㄹㄴㅇㄹㄴㅇㅀㅇㅀㅇㅀㅇㅀㅇㅀㅇㅀㄴㅇㅀㄴㅇㅀ</i>
+    <i class="fas fa-arrow-up"></i>
 </button>
 	
 	<%@include file="/WEB-INF/views/includes/footer.jsp"%>
