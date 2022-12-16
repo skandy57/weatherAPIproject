@@ -1,7 +1,5 @@
 package co.mg.service;
 
-
-
 import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
@@ -15,18 +13,33 @@ import lombok.RequiredArgsConstructor;
 
 @Repository
 @RequiredArgsConstructor
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
 
-		private static final Logger log=LoggerFactory.getLogger(MemberServiceImpl.class);
-		
-		private final MemberMapper mapper;
-		
-		@Resource(name="sqlSession")
-		SqlSession sqlSession;
-		
-		public void signup(MemberVO member) throws Exception {
-			log.info("MemberServiceImpl signup-----------");
-			mapper.signup(member);
-			
-		}
+	private static final Logger log = LoggerFactory.getLogger(MemberServiceImpl.class);
+
+	private final MemberMapper mapper;
+
+	@Resource(name = "sqlSession")
+	SqlSession sqlSession;
+
+	public MemberVO login(MemberVO member)throws Exception{
+		log.info("MemberServiceImpl login-------------");
+		return mapper.login(member);
+	}
+	
+	public int signUp(MemberVO member) throws Exception {
+		log.info("MemberServiceImpl signup-----------");
+		return mapper.signUp(member);
+
+	}
+
+	public MemberVO myInfoView(Long member_num) throws Exception {
+		log.info("MemberServiceImpl myInfoView----------");
+		return mapper.myInfoView(member_num);
+	}
+	
+	public int update(MemberVO member)throws Exception{
+		log.info("MemberServiceImpl update------------");
+		return mapper.update(member);
+	}
 }

@@ -3,9 +3,26 @@
 
 <mapper namespace="co.mg.mapper.MemberMapper">
 
+	<select id="login" resultType="co.mg.VO.MemberVO">
+		select *from member
+		where id=#{id} and pw=#{pw}
+	</select>
 	<insert id="signup">
-		insert into pj_like (id, pw, signupDate)
-		values (#{id},#{pw}, current_date)
+		insert into pj_like (id, pw, signupDate,isActive,member_grade,member_num)
+		values (#{id},#{pw}, current_date,1,1,member_seq.NEXTVAL)
 	</insert>
+	<select id="myInfoView" resultType="co.mg.VO.MemberVO">
+		select *from member
+		where member_num=#{member_num}
+	</select>
+	<update id="update">
+	 	update member
+	 	set
+	 		id=#{id},
+	 		pw=#{pw},
+	 		nickname=#{nickname}
+	 	where
+	 		member_num=#{member_num}
+	</update>
 
 </mapper>
