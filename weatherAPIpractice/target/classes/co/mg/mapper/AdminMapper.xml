@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.mg.mapper.AdminMapper">
+<sql id="criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							user_name like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							nickname like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							email like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
+	<sql id="criteria_date">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							trade_time between to_date(#{sdate},'yyyy-MM-dd') and to_date(#{edate},'yyyy-MM-dd')
+							<!-- trade_time between #{sdate} and #{edate} -->
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	<select id="getMemList" resultType="co.mg.vo.MemberVO">
+		<![CDATA[
+		select 
+			id, pw, signupdate, isactive, member_grade, member_num, nickname 
+		from
+			(
+			select ROWNUM rn,  id, pw, signupdate, isactive, member_grade, member_num, nickname 
+			from member
+			where  
+		]]>
+
+		<include refid="criteria"></include> 
+		<![CDATA[
+		   rownum <= #{pageNum} * #{amount}
+		   )
+		where rn > (#{pageNum} -1) * #{amount}   
+		]]>
+
+	</select>
+	
+
+</mapper>

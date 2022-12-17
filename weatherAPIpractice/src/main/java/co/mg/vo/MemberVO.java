@@ -11,6 +11,6 @@ public class MemberVO {
 	private String nickname;
 	private String pw;
 	private Date signupDate;
-	private int isActive;
+	private byte isActive;
 	private String member_grade;
 }

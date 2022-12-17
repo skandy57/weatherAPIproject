@@ -17,7 +17,6 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @RequiredArgsConstructor
-@Log4j
 @RequestMapping("/member/*")
 public class MemberController {
 	

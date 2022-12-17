@@ -13,7 +13,7 @@
 		<property name="driverClassName"
 			value="oracle.jdbc.driver.OracleDriver" />
 		<property name="jdbcUrl"
-			value="jdbc:oracle:thin:@121.164.72.127:1521/xepdb1" />
+			value="jdbc:oracle:thin:@121.164.72.92:1521/xepdb1" />
 		<property name="username" value="sys as sysdba" />
 		<property name="password" value="1234" />
 	</bean>
