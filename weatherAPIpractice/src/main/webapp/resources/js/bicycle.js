@@ -84,7 +84,7 @@ function getWeather(lat, lon) {
         }
         score.textContent=bikingScore;
         text.textContent=weatherText;
-        
+      
     })
     .catch((error) => console.log("error:", error));
 }
