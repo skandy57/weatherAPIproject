@@ -88,5 +88,4 @@ function getWeather(lat, lon) {
     })
     .catch((error) => console.log("error:", error));
 }
-
 init();
