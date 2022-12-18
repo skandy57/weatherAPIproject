@@ -28,7 +28,24 @@
 	charset="UTF-8">
 <link rel="stylesheet" href="${path}/resources/css/style.css">
 <title>지금 날씨는?</title>
-<script>
+
+</head>
+<body>
+	<%@include file="/WEB-INF/views/includes/header.jsp"%>
+
+	<div class="container">
+		<h1>지금 날씨는?</h1>
+		<span class="weatherInfo"></span> <img class="weatherIcon">
+	</div>
+	<button id="scroll-top-btn" title="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+	
+	<%@include file="/WEB-INF/views/includes/footer.jsp"%>
+</body>
+
+<script src="${path}/resources/js/app.js">
+
 const toggleBtn = document.querySelector('.navbar__toggleBtn');
 const menu = document.querySelector('.navbar__menu');
 const sns = document.querySelector('.navbar__sns');
@@ -58,20 +75,4 @@ window.addEventListener('scroll', event => {
  }
 });
 </script>
-</head>
-<body>
-	<%@include file="/WEB-INF/views/includes/header.jsp"%>
-
-	<div class="container">
-		<h1>지금 날씨는?</h1>
-		<span class="weatherInfo"></span> <img class="weatherIcon">
-	</div>
-	<button id="scroll-top-btn" title="Scroll to top">
-    <i class="fas fa-arrow-up"></i>
-</button>
-	
-	<%@include file="/WEB-INF/views/includes/footer.jsp"%>
-</body>
-
-<script src="${path}/resources/js/app.js"></script>
 </html>

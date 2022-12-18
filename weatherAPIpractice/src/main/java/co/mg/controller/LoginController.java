@@ -23,7 +23,7 @@ public class LoginController {
 
 	@GetMapping("/login")
 	public String login() throws Exception {
-		return "/member/login";
+		return "/login/login";
 	}
 
 	@PostMapping("/login")
@@ -33,13 +33,13 @@ public class LoginController {
 		log.info(loginMember + " 로그인 시도");
 		if (loginMember == null) {
 			session.setAttribute("msg", "아이디 또는 비밀번호가 다릅니다");
-			return "/loginError";
+			return "login/loginError";
 		} else if (loginMember.getMember_grade() == "탈퇴") {
 			session.setAttribute("msg", "회원탈퇴한 계정입니다");
-			return "/loginError";
+			return "login/loginError";
 		} else if (loginMember.getMember_grade() == "제재") {
 			session.setAttribute("msg", "비정상적인 활동으로 제재를 받은 계정입니다");
-			return "/loginError";
+			return "login/loginError";
 		} else if (loginMember.getMember_grade() == "일반") {
 			session.setAttribute("mem", loginMember);
 			return "redirect:/";
