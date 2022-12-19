@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +26,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"
 	charset="UTF-8">
-<link rel="stylesheet" href="${path}/resources/css/style.css">
+<link rel="stylesheet" href="${path}/resources/css/style1.css">
 <title>지금 날씨는?</title>
 
 </head>

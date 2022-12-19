@@ -44,3 +44,33 @@ function getWeather(lat, lon) {
 }
 
 init();
+
+
+const toggleBtn = document.querySelector('.navbar__toggleBtn');
+const menu = document.querySelector('.navbar__menu');
+const sns = document.querySelector('.navbar__sns');
+
+toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        sns.classList.toggle('active');
+});
+const btn = document.getElementById('scroll-top-btn');
+
+//handle the click event for the button
+btn.addEventListener('click', event => {
+ // scroll to the top of the page
+ window.scrollTo({
+     top: 0,
+     behavior: 'smooth'
+ });
+});
+
+//handle the scroll event for the window
+window.addEventListener('scroll', event => {
+ // show or hide the button based on the scroll position
+ if (window.pageYOffset > 300) {
+     btn.style.display = 'block';
+ } else {
+     btn.style.display = 'none';
+ }
+});
