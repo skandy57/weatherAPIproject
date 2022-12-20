@@ -51,13 +51,10 @@
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
-	            		<label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
+	            		<a href="/member/signUp">회원가입</a>
 								</div>
 								<div class="w-50 text-md-right">
-									<a href="#">Forgot Password</a>
+									<a href="/member/findPw">비밀번호 찾기</a>
 								</div>
 	            </div>
 	            <div class="form-group">

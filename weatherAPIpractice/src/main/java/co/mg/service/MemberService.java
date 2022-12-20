@@ -14,4 +14,6 @@ public interface MemberService {
 	public MemberVO myInfoView(Long member_num) throws Exception;
 
 	public int update(MemberVO member)throws Exception;
+
+	public int findPw(MemberVO member)throws Exception;
 }

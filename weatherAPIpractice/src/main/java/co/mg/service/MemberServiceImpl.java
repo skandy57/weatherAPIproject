@@ -42,5 +42,7 @@ public class MemberServiceImpl implements MemberService {
 		log.info("MemberServiceImpl update------------");
 		return mapper.update(member);
 	}
-	
+	public int findPw(MemberVO member)throws Exception{
+		return mapper.findPw(member);
+	}
 }

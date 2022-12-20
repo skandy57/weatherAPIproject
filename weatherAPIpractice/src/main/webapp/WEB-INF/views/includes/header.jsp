@@ -23,21 +23,11 @@
 	rel="stylesheet">
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
+<script src="${path}/resources/js/main.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 <link rel="stylesheet" href="${path}/resources/css/style1.css">
 <title>지금 날씨는?</title>
-<script>
 
-const toggleBtn = document.querySelector('.navbar__toggleBtn');
-const menu = document.querySelector('.navbar__menu');
-const sns = document.querySelector('.navbar__sns');
-
-toggleBtn.addEventListener('click', () => {
-        menu.classList.toggle('active');
-        sns.classList.toggle('active');
-});
-</script>
 </head>
 <body>
 	<!-- nav 상단 고정-->
