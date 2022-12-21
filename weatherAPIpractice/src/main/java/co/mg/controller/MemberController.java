@@ -21,7 +21,12 @@ import lombok.extern.log4j.Log4j;
 public class MemberController {
 
 	private final MemberService service;
-
+	
+	@PostMapping("/reduCheck")
+	public int reduCheck(@RequestParam(required = false, value = "id") String id) throws Exception{
+		int result=service.reduCheck(id);
+		return result;
+	}
 	@GetMapping("/signUp")
 	public String signUp() throws Exception {
 		return "member/signUp";

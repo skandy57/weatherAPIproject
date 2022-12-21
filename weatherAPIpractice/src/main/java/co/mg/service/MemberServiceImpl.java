@@ -21,7 +21,11 @@ public class MemberServiceImpl implements MemberService {
 
 	@Resource(name = "sqlSession")
 	SqlSession sqlSession;
-
+	
+	public int reduCheck(String id)throws Exception{
+		log.info("MemberServiceImpl reduCheck---------");
+		return mapper.reduCheck(id);
+	}
 	public MemberVO login(MemberVO member)throws Exception{
 		log.info("MemberServiceImpl login-------------");
 		return mapper.login(member);
