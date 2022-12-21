@@ -27,17 +27,17 @@
 		<form action="/member/signUp" method="post">
 			<div class="form-group">
 				<label for="id">ID</label> <input type="text" class="form-control"
-					id="id" name="id" required>
+					id="id" name="id" placeholder="아이디" required>
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label> <input type="password"
-					class="form-control" id="password" name="password" required>
+					class="form-control" id="pw" name="pw" placeholder="비밀번호" required>
 			</div>
 			<div class="form-group">
 				<label for="nickname">Nickname</label> <input type="text"
-					class="form-control" id="nickname" name="nickname" required>
+					class="form-control" id="nickname" name="nickname"placeholder="닉네임" required>
 			</div>
-			<button type="submit" class="btn btn-primary">Sign Up</button>
+			<button type="submit" class="btn btn-primary">회원가입</button>
 		</form>
 	</div>
 </body>
