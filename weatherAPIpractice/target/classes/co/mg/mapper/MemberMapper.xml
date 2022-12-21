@@ -8,9 +8,9 @@
 		where id=#{id} and 
 		pw=#{pw}
 	</select>
-	<insert id="signup">
-		insert into pj_like (id, pw, signupDate,isActive,member_grade,member_num)
-		values (#{id},#{pw}, current_date,1,1,member_seq.NEXTVAL)
+	<insert id="signUp">
+		insert into pj_like (id, pw, nickname, signupDate,isActive,member_grade,member_num)
+		values (#{id},#{pw}, #{nickname}, current_date,1,1,member_seq.NEXTVAL)
 	</insert>
 	<select id="myInfoView" resultType="co.mg.vo.MemberVO">
 		select *from member
