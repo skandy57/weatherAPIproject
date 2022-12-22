@@ -12,7 +12,7 @@
 		insert into member (id,pw,nickname,signupDate,isActive,member_grade,member_num)
 		values (#{id},#{pw},#{nickname},current_date,1,1,member_seq.NEXTVAL)
 	</insert>
-	<select id="reduCheck">
+	<select id="reduCheck" resultType="int">
 		select count(*) from member
 		where id=#{id}
 	</select>

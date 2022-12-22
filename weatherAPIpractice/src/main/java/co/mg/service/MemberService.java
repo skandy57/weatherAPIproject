@@ -1,6 +1,9 @@
 package co.mg.service;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Errors;
 
 import co.mg.vo.MemberVO;
 
@@ -18,4 +21,6 @@ public interface MemberService {
 	public int update(MemberVO member) throws Exception;
 
 	public int findPw(MemberVO member) throws Exception;
+
+	 public Map<String, String> validateHandling(Errors errors) throws Exception;
 }
