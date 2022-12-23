@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +30,7 @@
 			$.ajax({
 				type : 'POST',
 				url : '/member/reduCheck',
-				dataType:"json",
+				dataType : "json",
 				data : $("#signUp").serializeArray(),
 				success : function(data) {
 					if (data == 0) {
@@ -37,46 +41,37 @@
 				}
 			});
 		});
-		document.getElementById('signUp').addEventListener('submit', function(event) {
-			  event.preventDefault();
 
-			  var id = document.getElementById('id').value;
-			  var pw = document.getElementById('pw').value;
-			  var nickname = document.getElementById('nickname').value;
-
-			  if (!id || !pw || !nickname) {
-			    alert('아이디, 비밀번호, 닉네임은 공백일 수 없습니다.');
-			    return;
-			  }
-
-			  // form can be submitted
-			  document.getElementById('signUp').submit();
-			});
 	});
-	
 </script>
 </head>
 <body>
 	<div class="container mt-5">
-		<h1>Membership Form</h1>
-		<form action="/member/signUp" method="post" id="signUp">
+		<h1>회원가입</h1>
+		<form:form action="/member/signUp" method="post" id="signUp"
+			modelAttribute="member">
 			<div class="form-group">
-				<label for="id">아이디</label> <input type="text" class="form-control"
-					id="id" name="id" placeholder="아이디" required>
+				<label for="id">아이디</label>
+				<form:input path="id" type="text" class="form-control" id="id"
+					name="id" placeholder="아이디" />
+				<form:errors path="id" />
 				<button type="button" class="btn btn-secondary" id="checkIdBtn">중복
 					확인</button>
 			</div>
 			<div class="form-group">
-				<label for="password">비밀번호</label> <input type="password"
-					class="form-control" id="pw" name="pw" placeholder="비밀번호" required>
+				<label for="password">비밀번호</label>
+				<form:password path="pw" class="form-control" id="pw" name="pw"
+					placeholder="비밀번호" />
+				<form:errors path="pw" />
 			</div>
 			<div class="form-group">
-				<label for="nickname">닉네임</label> <input type="text"
-					class="form-control" id="nickname" name="nickname"
-					placeholder="닉네임" required>
+				<label for="nickname">닉네임</label>
+				<form:input path="nickname" type="text" class="form-control"
+					id="nickname" name="nickname" placeholder="닉네임" />
+				<form:errors path="nickname" />
 			</div>
 			<button type="submit" class="btn btn-primary">회원가입</button>
-		</form>
+		</form:form>
 	</div>
 </body>
 </body>
