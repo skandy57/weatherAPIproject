@@ -1,5 +1,7 @@
 package co.mg.controller;
 
+import java.io.Console;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -31,16 +33,20 @@ public class LoginController {
 
 		MemberVO loginMember = service.login(member);
 		log.info(loginMember + " 로그인 시도");
+	
 		if (loginMember == null) {
 			session.setAttribute("msg", "아이디 또는 비밀번호가 다릅니다");
 			return "login/loginError";
-		} else if (loginMember.getMember_grade() == "탈퇴") {
+		} else if (loginMember.getMember_grade() == 0) {
+			log.info(loginMember.getId()+"는 탈퇴계정입니다.");
 			session.setAttribute("msg", "회원탈퇴한 계정입니다");
 			return "login/loginError";
-		} else if (loginMember.getMember_grade() == "제재") {
+		} else if (loginMember.getMember_grade() == -1) {
+			log.info(loginMember.getId()+"는 제재계정입니다.");
 			session.setAttribute("msg", "비정상적인 활동으로 제재를 받은 계정입니다");
 			return "login/loginError";
-		} else if (loginMember.getMember_grade() == "일반") {
+		} else if (loginMember.getMember_grade() == 1) {
+			log.info(loginMember.getId()+"는 일반계정입니다.");
 			session.setAttribute("mem", loginMember);
 			return "redirect:/";
 		} else {

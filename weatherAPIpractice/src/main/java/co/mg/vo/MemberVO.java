@@ -20,5 +20,5 @@ public class MemberVO {
 	private String pw;
 	private Date signupDate;
 	private byte isActive;
-	private String member_grade;
+	private int member_grade;
 }

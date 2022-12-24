@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ page session="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,12 +53,13 @@
                         <c:if test="${mem==null }">
                         <li><a href="/login/login">로그인</a></li>
                         </c:if>
-                        <c:if test="${mem!=null }">
-                        <li><form method="post"><input type="hidden" id="session_member_num" value="${mem.member_num }"></form></li>
+                        <c:if test="${mem!=null }"><li>${mem.nickname }</li>
+                        <form method="post"><input type="hidden" id="session_member_num" value="${mem.member_num }"></form>
+                        
                         </c:if>
                 </ul>
                 <ul class="navbar__sns">
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://github.com/skandy57/weatherAPIproject"><img src="${path}/resources/images/GitHub-Mark.png" width="18"></img></a></li>
                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                 </ul>
                 <a href="#" class="navbar__toggleBtn"> <i class="fas fa-bars"></i> </a>
